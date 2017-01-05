@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Boardbox Marketplace</title>
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="https://use.typekit.net/bfc4flt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+  </head>
+  <body class="checkout js_checkout-shipping">
+
+    <div class="order">
+        <div class="order__header">
+          <div class="dismiss-modal">
+            <div id="mdlDismiss" data-open="no" class="dismiss-modal__btn">
+              &#10005;
+            </div>
+          </div>
+          <div class="order__headline">Checkout</div>
+        </div>
+        <div id="order-form" class="order__form">
+          <div class="steps">
+              <div class="current-step">2<span> / 3</span></div>
+              <div class="current-step__title">Choose a Shipping Destination</div>
+              <div class="steps__icons steps--2">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div style="width:100%;margin-top:30px;">
+
+                <div class="steps__details">
+                  <div class="steps__prompt-wrapper">
+                    <div class="steps__prompt">Recipient</div>
+                    <div class="steps__answer">
+                      <input id="txtRecipient" type="text" />
+                    </div>
+                  </div>
+                  <div class="steps__prompt-wrapper">
+                    <div class="steps__prompt">Address 1</div>
+                    <div class="steps__answer">
+                      <input id="txtAddress1" type="text" />
+                    </div>
+                  </div>
+                  <div class="steps__prompt-wrapper">
+                    <div class="steps__prompt">Address 2</div>
+                    <div class="steps__answer">
+                      <input id="txtAddress2" type="text" placeholder="Optional" />
+                    </div>
+                  </div>
+                  <div class="steps__prompt-wrapper">
+                    <div class="steps__prompt">City</div>
+                    <div class="steps__answer">
+                      <input id="txtCity" type="text" />
+                    </div>
+                  </div>
+                  <div class="steps__prompt-wrapper">
+                    <div class="steps__prompt">State / Province</div>
+                    <div class="steps__answer">
+                      <input id="txtStateProvince" type="text" />
+                    </div>
+                  </div>
+                  <div class="steps__prompt-wrapper">
+                    <div class="steps__prompt">Zip / Postal</div>
+                    <div class="steps__answer">
+                      <input id="txtZipPostal" type="text" />
+                    </div>
+                  </div>
+                  <div class="steps__prompt-wrapper">
+                    <div class="steps__prompt">Country</div>
+                    <div class="steps__answer">
+                      <input id="txtCountry" type="text" />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="next-step">
+                <button type="submit" data-step="2" class="next-step__btn">NEXT</button>
+              </div>
+            </div>
+        </div>
+        <div id="overlay" class="checkout-overlay"></div>
+      </div>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="/static/js/main.js"></script>
+  </body>
+</html>

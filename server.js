@@ -6,10 +6,25 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/static",express.static(__dirname + "/static"));
+app.use("/static/css",express.static(__dirname + "/static/css"));
+app.use("/static/scss",express.static(__dirname + "/static/scss"));
+app.use("/static/img",express.static(__dirname + "/static/img"));
+app.use("/static/js",express.static(__dirname + "/static/js"));
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
+})
+
+app.get('/checkout/options', function (req, res) {
+  res.sendFile(__dirname + '/checkout-options.html');
+})
+
+app.get('/checkout/shipping', function (req, res) {
+  res.sendFile(__dirname + '/checkout-shipping.html');
+})
+
+app.get('/checkout/payment', function (req, res) {
+  res.sendFile(__dirname + '/checkout-payment.html');
 })
 
 app.listen(process.env.PORT || 8080, function () {

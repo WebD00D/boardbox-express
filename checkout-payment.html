@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Boardbox Marketplace</title>
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="https://use.typekit.net/bfc4flt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+  </head>
+  <body class="checkout js_checkout-payment">
+
+    <div class="order">
+        <div class="order__header">
+          <div class="dismiss-modal">
+            <div id="mdlDismiss" data-open="no" class="dismiss-modal__btn">
+              &#10005;
+            </div>
+          </div>
+          <div class="order__headline">Checkout</div>
+        </div>
+        <div id="order-form" class="order__form">
+          <div class="steps">
+              <div class="current-step">3<span> / 3</span></div>
+              <div class="current-step__title">Review Order & Pay</div>
+              <div class="steps__icons steps--3">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div style="width:100%;margin-top:30px;">
+
+              <div class="review">
+                <div class="review__preferences">
+                  <div>
+                    <div class="review__section-header">Product Preferences</div>
+                    <div class="review__item">
+                      Grey Nordic Beanie
+                      <span id="item-option"></span>
+                    </div>
+                  </div>
+                  <a href="/checkout/options" class="review__edit">Edit</a>
+                </div>
+                <div class="review__shipping">
+                  <div>
+                    <div class="review__section-header">Shipping Info</div>
+                    <div class="review__item" id="recipient"></div>
+                    <div class="review__item" id="address1"></div>
+                    <div class="review__item" id="address2"></div>
+                    <div class="review__item" id="citystatezip"></div>
+                    <div class="review__item" id="country"></div>
+                  </div>
+                  <a href="/checkout/shipping" class="review__edit">Edit</a>
+                </div>
+                <div class="review__shipping">
+                  <div>
+                    <div class="review__section-header">Cost</div>
+                    <div class="review__item">
+                      <div>Subtotal: <b>$14.00</b></div>
+                    </div>
+                    <div class="review__item">
+                      <div>Shipping & Tax : <b>$5.00</b></div>
+                    </div>
+                    <div class="review__item">
+                      <div>Total: <b>$19.00</b></div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+              </div>
+              <div class="next-step">
+                <button id="btnPay" type="submit" data-step="3" class="next-step__btn">PAY</button>
+              </div>
+              <div class="review__shipping">
+                <small>Payments powered by Stripe.</small>
+              </div>
+            </div>
+        </div>
+        <div id="overlay" class="checkout-overlay"></div>
+      </div>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="/static/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,530 @@
+.App {
+  padding-bottom: 50px; }
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  font-weight: 300;
+  margin: 0 auto; }
+
+.container {
+  max-width: 80%;
+  margin: 0 auto; }
+
+.ml-30 {
+  margin-left: 30px; }
+
+.mr-30 {
+  margin-right: 30px; }
+
+.header .nav {
+  background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 1; }
+  .header .nav__wrapper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    max-width: 90%; }
+  .header .nav__logo img {
+    height: 25px; }
+  .header .nav__links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 35%;
+    font-size: 13px;
+    font-family: "filson-pro";
+    font-weight: 200; }
+    .header .nav__links a {
+      text-decoration: none; }
+    .header .nav__links__link--cta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      height: 25px;
+      width: 150px;
+      border-radius: 3px;
+      background-color: #f43085;
+      transition: .2s ease; }
+      .header .nav__links__link--cta:hover {
+        background-color: #2a2830; }
+
+.header .hero {
+  top: -60px;
+  position: relative;
+  height: 600px;
+  background: linear-gradient(rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0.6)), url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+.header .headline__primary {
+  font-size: 50px;
+  font-family: "filson-pro";
+  font-weight: 500;
+  line-height: 55px;
+  margin-bottom: 20px; }
+
+.header .headline__sub {
+  font-size: 20px;
+  font-family: "filson-pro";
+  font-weight: 200; }
+
+.featured-brand {
+  margin: 0 auto;
+  position: relative;
+  top: -100px;
+  background-color: white;
+  padding-bottom: 30px;
+  width: 800px;
+  box-shadow: 0 0 20px 0 rgba(42, 40, 48, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px; }
+  .featured-brand__tag {
+    font-family: "filson-pro";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -15px;
+    height: 30px;
+    width: 150px;
+    background-color: #2a2830;
+    color: white;
+    margin: 0 auto;
+    border-radius: 3px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase; }
+  .featured-brand__brand {
+    margin-top: 30px;
+    font-size: 40px; }
+  .featured-brand__about {
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 30px;
+    font-family: "filson-pro";
+    font-weight: 200; }
+  .featured-brand__cta {
+    padding: 0 35px;
+    position: relative;
+    display: inline-block;
+    font-family: helvetica, arial, sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px 0 rgba(42, 40, 48, 0.1);
+    background: #f43085;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px; }
+  .featured-brand__product {
+    width: 100%; }
+    .featured-brand__product__container {
+      width: 85%;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between; }
+    .featured-brand__product__image {
+      margin-right: 15px;
+      height: 300px;
+      background-image: url(https://voltfuse.com/wp-content/uploads/2015/10/greynordicflatf03-555x710.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition: 0.2s ease-out;
+      display: flex;
+      flex: 1; }
+    .featured-brand__product__info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center; }
+  .featured-brand__pname {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    font-family: "filson-pro";
+    font-weight: 500; }
+  .featured-brand__pdesc {
+    font-family: "filson-pro";
+    font-weight: 200;
+    margin-bottom: 15px; }
+    .featured-brand__pdesc div {
+      margin-bottom: 7px; }
+  .featured-brand__summary {
+    font-family: "filson-pro";
+    font-weight: 200;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px; }
+    .featured-brand__summary--pricing {
+      font-size: 20px;
+      font-weight: 400; }
+      .featured-brand__summary--pricing span {
+        font-size: 14px;
+        color: #f43085;
+        text-decoration: line-through; }
+  .featured-brand__btn {
+    padding: 0 35px;
+    position: relative;
+    display: inline-block;
+    font-family: "filson-pro";
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px 0 rgba(42, 40, 48, 0.1);
+    background: #f43085;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: .2s ease; }
+    .featured-brand__btn:hover {
+      background-color: #2a2830; }
+
+.product__wrapper {
+  box-shadow: 0 0 20px 0 rgba(42, 40, 48, 0.1);
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  position: relative;
+  background-color: white;
+  border-radius: 3px; }
+
+.product__item {
+  background-image: url(https://voltfuse.com/wp-content/uploads/2015/10/greynordicflatf03-555x710.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.2s ease-out;
+  height: 85%;
+  margin: 0 auto;
+  position: relative; }
+
+.product__info {
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  position: relative; }
+  .product__info a {
+    text-decoration: none;
+    padding: 0 35px;
+    position: relative;
+    display: inline-block;
+    font-family: helvetica, arial, sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px 0 rgba(42, 40, 48, 0.1);
+    background: #f43085;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px; }
+  .product__info__details__brand {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase; }
+  .product__info__details__item {
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 400; }
+    .product__info__details__item span {
+      opacity: 0.5; }
+
+.product__overlay {
+  transition: 0.2s ease-out;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  opacity: 0.1; }
+  .product__overlay:hover {
+    opacity: 1; }
+
+.faqs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 800px; }
+  .faqs__headline {
+    font-family: "filson-pro";
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-align: center; }
+  .faqs__sub {
+    font-family: "filson-pro";
+    font-weight: 300;
+    font-size: 15px; }
+  .faqs__faq {
+    box-shadow: 0 0 20px 0 rgba(42, 40, 48, 0.1);
+    padding: 30px;
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 30px; }
+    .faqs__faq__wrapper a {
+      text-decoration: none; }
+    .faqs__faq hr {
+      margin-top: 10px;
+      height: 1px;
+      background-color: #eeeeee;
+      border: none; }
+  .faqs__question {
+    color: #f43085;
+    display: flex;
+    justify-content: space-between;
+    transition: .2s ease;
+    font-family: "filson-pro";
+    font-weight: 500; }
+  .faqs__answer {
+    font-family: "filson-pro";
+    font-weight: 300;
+    margin-top: 10px; }
+
+.order__header {
+  display: flex;
+  margin: 0 auto;
+  border-radius: 3px;
+  padding: 30px;
+  background-image: url("http://getboardbox.com/wp-content/uploads/2016/10/Snowy.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  justify-content: center;
+  align-items: center; }
+
+.order__headline {
+  font-family: "filson-pro";
+  font-weight: 500;
+  font-size: 50px;
+  color: white; }
+
+.order__form {
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: white;
+  box-shadow: 0 0 20px 0 rgba(42, 40, 48, 0.1);
+  padding: 30px;
+  position: relative;
+  top: -30px;
+  border-radius: 3px;
+  z-index: 2; }
+  .order__form--hidden {
+    z-index: 1; }
+
+.steps {
+  display: flex;
+  justify-content: center;
+  font-family: "filson-pro";
+  font-weight: 500;
+  color: #2a2830;
+  flex-direction: column;
+  align-items: center; }
+  .steps .current-step__title {
+    margin-top: 5px;
+    font-family: "filson-pro";
+    font-weight: 500;
+    color: #2a2830; }
+  .steps .current-step span {
+    color: #cccccc; }
+  .steps__icons {
+    flex-direction: row;
+    display: flex;
+    width: 100px;
+    justify-content: space-around;
+    margin-top: 10px; }
+    .steps__icons div {
+      height: 3px;
+      width: 25px;
+      background-color: #cccccc; }
+  .steps--1 div:nth-child(1) {
+    background-color: #f43085; }
+  .steps--2 div:nth-child(1) {
+    background-color: #f43085; }
+  .steps--2 div:nth-child(2) {
+    background-color: #f43085; }
+  .steps--3 div:nth-child(1) {
+    background-color: #f43085; }
+  .steps--3 div:nth-child(2) {
+    background-color: #f43085; }
+  .steps--3 div:nth-child(3) {
+    background-color: #f43085; }
+  .steps__details {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    flex-direction: column; }
+  .steps__prompt-wrapper {
+    display: flex;
+    margin-top: 10px;
+    width: 100%; }
+  .steps__prompt {
+    font-weight: 500;
+    background-color: #ebeaec;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: flex;
+    width: 250px;
+    height: 50px;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 15px;
+    flex: 1;
+    font-size: 12px;
+    color: rgba(42, 40, 48, 0.5); }
+  .steps__answer {
+    display: flex;
+    flex-basis: 60%; }
+    .steps__answer input {
+      flex: 1;
+      background-color: #f2f2f4;
+      border: none;
+      padding-left: 15px;
+      font-size: 15px;
+      font-family: "filson-pro";
+      font-weight: 300;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px; }
+      .steps__answer input:focus {
+        outline: 0; }
+
+.next-step button {
+  margin-top: 30px;
+  height: 75px;
+  width: 75px;
+  border-radius: 100px;
+  border: none;
+  background-color: #2a2830;
+  color: white;
+  transition: .2s ease;
+  font-family: "filson-pro";
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 1px; }
+  .next-step button:focus, .next-step button:active {
+    outline: 0; }
+  .next-step button:hover {
+    background-color: rgba(42, 40, 48, 0.7);
+    cursor: pointer; }
+
+.dismiss-modal {
+  padding-bottom: 50px; }
+  .dismiss-modal__btn {
+    font-family: "filson-pro";
+    font-weight: 300;
+    height: 50px;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 100px;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    transition: 0.5s ease; }
+    .dismiss-modal__btn--open {
+      width: 250px;
+      background-color: rgba(255, 255, 255, 0.9); }
+    .dismiss-modal__btn:hover {
+      opacity: 0.8;
+      cursor: pointer; }
+
+.checkout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #2a2830;
+  opacity: 0;
+  transition: 0.5s ease;
+  z-index: 1; }
+  .checkout-overlay--open {
+    opacity: 0.8; }
+
+.review {
+  display: flex;
+  flex-direction: column; }
+  .review__preferences {
+    display: flex;
+    justify-content: space-between; }
+  .review__shipping {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between; }
+    .review__shipping small {
+      font-size: 12px;
+      color: #cccccc;
+      font-style: italic; }
+  .review__section-header {
+    font-size: 12px;
+    color: #cccccc;
+    margin-bottom: 7px; }
+  .review__item {
+    display: flex;
+    flex-direction: column; }
+    .review__item span {
+      color: #f43085;
+      font-size: 13px; }
+    .review__item b {
+      color: #f43085;
+      font-weight: 500; }
+  .review__edit {
+    height: 25px;
+    border-radius: 3px;
+    background-color: #f43085;
+    color: white;
+    font-family: "filson-pro";
+    font-weight: 300;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    display: flex;
+    font-size: 12px;
+    transition: .2s ease;
+    text-decoration: none; }
+    .review__edit:hover {
+      cursor: pointer;
+      background-color: #2a2830; }
+
+.input-error {
+  background-image: linear-gradient(270deg, rgba(244, 48, 133, 0.8) 0%, rgba(244, 0, 25, 0) 80%); }
