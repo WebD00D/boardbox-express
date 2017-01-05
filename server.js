@@ -27,6 +27,10 @@ app.get('/checkout/payment', function (req, res) {
   res.sendFile(__dirname + '/checkout-payment.html');
 })
 
+app.get('/checkout/success', function (req, res) {
+  res.sendFile(__dirname + '/checkout-success.html');
+})
+
 app.listen(process.env.PORT || 8080, function () {
   console.log('Listening on port 8080!')
 })

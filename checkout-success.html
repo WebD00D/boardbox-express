@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Boardbox Marketplace</title>
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="https://use.typekit.net/bfc4flt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+  </head>
+  <body class="checkout js_checkout-success">
+
+    <div class="order">
+        <div class="order__header">
+          <div class="dismiss-modal">
+            <div id="mdlDismiss" data-open="no" class="dismiss-modal__btn">
+              &#10005;
+            </div>
+          </div>
+          <div class="order__headline">Checkout</div>
+        </div>
+        <div id="order-form" class="order__form">
+            <div class="success" style="width:100%;margin-top:30px;">
+
+              <div class="success__header">Yewwww!</div>
+              <div class="success__message">
+                We've notified Voltfuse to go ahead and send the threads your way. In
+                the meantime while you wait, go checkout out their <a href="#"> website</a> and get to know
+                the company you'll be reppin' a bit better.
+              </div>
+              <div class="success__divider"><hr /></div>
+              <div class="success__subheader">SNEAK PEEK AT NEXT WEEK</div>
+              <div class="success__sneakpeek">
+                <div class="featured-brand__product">
+                  <div style="display:flex">
+                    <div class="featured-brand__product__image"></div>
+                    <div class="featured-brand__product__info">
+                      <small class="vendor">VOLTFUSE</small>
+                      <div class="featured-brand__pname">Grey Nordic Beanie</div>
+                      <div class="featured-brand__pdesc">
+                        <div>A nordic styled beanie with a twist of modern style and function.</div>
+                      </div>
+                      <div class="featured-brand__summary">
+                        <div class="featured-brand__summary--pricing">
+                          $14.99 <span>$25.00</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="success__divider" style="margin-top:0px"><hr /></div>
+              <div class="success__subheader">SAVE CASH ON YOUR NEXT BOARDBOX WITH CODE: </div>
+              <div class="success__code">BBOX2017</div>
+              <a href="http://www.getboardbox.com" class="featured-brand__btn">VISIT GETBOARDBOX.COM</a>
+
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="checkout-overlay"></div>
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="/static/js/main.js"></script>
+  </body>
+</html>

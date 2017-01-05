@@ -180,6 +180,13 @@ $(document).ready(function(){
           $.post( "/checkout", { token: token.id, amount: 2250, description: 'Voltfuse Grey Nordic Beanie' })
           .done(function( data ) {
             console.log(data);
+
+            if ( data !== "card failed" ) {
+              window.location.href = "/checkout/success";
+            } else {
+              alert("card failed");
+            }
+
           });
         }
       });
