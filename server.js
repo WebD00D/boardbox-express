@@ -39,6 +39,8 @@ app.listen(process.env.PORT || 8080, function () {
 
 app.post('/checkout', function (request, res) {
 
+   // TODO: Should prob just pull the item price from a db call, and then just add the shipping.
+   
     var stripe = require("stripe")("sk_test_n6YN203dTkI4VQQOaCAxIqMX");
     var token = request.body.token;
     var amount = request.body.amount
@@ -54,7 +56,7 @@ app.post('/checkout', function (request, res) {
       // The card has been declined
       res.end("card failed");
     } else {
-      res.end("charge was successful");
+      res.end("successful");
     }
 
   });

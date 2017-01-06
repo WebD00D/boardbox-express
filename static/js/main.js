@@ -97,10 +97,14 @@ $(document).ready(function(){
           break;
         case "3":
 
+
+        var amount = (parseFloat($("#total").attr("data-amount")).toFixed(2) * 100)
+        console.log(amount)
+
         handler.open({
           name: 'Boardbox Marketplace',
           description: 'Voltfuse Grey Nordic Beanie',
-          amount: 2250
+          amount: amount
         });
 
 
@@ -154,6 +158,8 @@ $(document).ready(function(){
       document.getElementById('txtCountry').value = localStorage.getItem('bbox_country');
     }
 
+
+
   }
 
   if ( $("body").hasClass("js_checkout-payment") ){
@@ -171,13 +177,21 @@ $(document).ready(function(){
 
       document.getElementById('country').innerHTML = localStorage.getItem('bbox_country');
 
+      var shippingCost = parseFloat(4.00)
+      var productCost = parseFloat(20.00)
+      var totalCost = productCost + shippingCost
+
+      $("#subtotal").text("$" + productCost.toFixed(2)).attr("data-amount", productCost.toFixed(2));
+      $("#shipping").text("$" + shippingCost.toFixed(2)).attr("data-amount", shippingCost.toFixed(2));
+      $("#total").text("$" + totalCost.toFixed(2)).attr("data-amount", totalCost.toFixed(2));
+
       var handler = StripeCheckout.configure({
         key: 'pk_test_pcCWFh9dcmaHCn4ThYvXV2UX',
         image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
         locale: 'auto',
         token: function(token) {
           console.log(token)
-          $.post( "/checkout", { token: token.id, amount: 2250, description: 'Voltfuse Grey Nordic Beanie' })
+          $.post( "/checkout", { token: token.id, amount: (totalCost * 100), description: 'Voltfuse Grey Nordic Beanie' })
           .done(function( data ) {
             console.log(data);
 
@@ -191,15 +205,7 @@ $(document).ready(function(){
         }
       });
 
-      // document.getElementById('customButton').addEventListener('click', function(e) {
-      //   // Open Checkout with further options:
-      //   handler.open({
-      //     name: 'Boardbox Marketplace',
-      //     description: 'Voltfuse Grey Nordic Beanie',
-      //     amount: 2250
-      //   });
-      //   e.preventDefault();
-      // });
+
 
       // Close Checkout on page navigation:
       window.addEventListener('popstate', function() {
