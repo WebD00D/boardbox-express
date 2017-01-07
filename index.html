@@ -6,7 +6,7 @@
     <title>Boardbox Marketplace</title>
     <link href="static/css/style.css" type="text/css" rel="stylesheet" />
     <script src="https://use.typekit.net/bfc4flt.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script>try{Typekit.load({ async: false });}catch(e){}</script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
   </head>
   <body>
@@ -15,22 +15,23 @@
       <div class="header">
         <div class="nav">
           <div class="nav__wrapper">
-            <div class="nav__logo"><img src="http://getboardbox.com/wp-content/uploads/2016/05/BBSMALL.png" alt="Boardbox Logo" /></div>
+            <div class="nav__logo"><img src="/static/img/bboxwhite.png" alt="Boardbox Logo" /></div>
             <div class="nav__links">
-              <div class="nav__links__link">Featured</div>
-              <div class="nav__links__link">FAQs</div>
+              <div class="nav__links__link"><a class="featuredlink" href="#">Featured</a></div>
+              <div class="nav__links__link"><a class="faqlink" href="#">FAQs</a></div>
               <a href="http://www.getboardbox.com"><div class="nav__links__link nav__links__link--cta">Order a Boardbox</div></a>
             </div>
           </div>
         </div>
         <div class="hero">
           <div class="headline">
-            <div class="headline__primary">Weekly deals for the <br /> board-sport enthusiast</div>
+            <div class="headline__primary">Weekly deals for the <br /> boardsport enthusiast</div>
             <div class="headline__sub">Get the hookup on surf, skate, & snowboarding goods.</div>
           </div>
         </div>
       </div>
-      <div class="featured-brand">
+
+      <div id="featured-brand" class="featured-brand">
         <div class="featured-brand__tag">Featured Brand</div>
         <div class="featured-brand__brand"><img src="https://voltfuse.com/wp-content/uploads/2016/10/regtm-boxlogo.png" alt="Voltfuse Logo" /></div>
         <div class="featured-brand__about">
@@ -42,7 +43,9 @@
         </div>
         <div class="featured-brand__product">
           <div class="featured-brand__product__container">
-            <div class="featured-brand__product__image"></div>
+            <div class="featured-brand__product__image">
+              <img src="https://voltfuse.com/wp-content/uploads/2015/10/greynordicflatf03-555x710.png" />
+            </div>
             <div class="featured-brand__product__info">
               <div class="featured-brand__pname">Grey Nordic Beanie</div>
               <div class="featured-brand__pdesc">
@@ -60,43 +63,62 @@
         </div>
       </div>
 
-      <div class="faqs">
-        <div style={{width: '100%'}}>
+      <div id="faqs" class="faqs">
+        <div style="width: 100%">
         <div class="faqs__headline">Have questions? We've got answers.</div>
 
         <div class="faqs__faq">
           <div class="faqs__faq__wrapper">
             <div class="faqs__question">
-              <span>Lorem ipsum dolor set amit de consectetur?</span>
+              <span>So how does this all work?</span>
             </div>
             <div class="faqs__answer" ref="toggle">
-              Vir dich sie aus mitten snowboarten
-              dem auf de rectar. Vo wohnen sie es mitte den rich auch
-              besuch. Der der wohan auf mit dem er sie est.
+              Every week we'll feature an upcoming boardsport brand that will
+              be giving you an awesome deal on one of their products.
             </div>
           </div>
         </div>
         <div class="faqs__faq">
           <div class="faqs__faq__wrapper">
             <div class="faqs__question">
-              <span>Lorem ipsum dolor set amit de consectetur?</span>
+              <span>What sort of deals are we talking?</span>
             </div>
             <div class="faqs__answer" ref="toggle">
-              Vir dich sie aus mitten snowboarten
-              dem auf de rectar. Vo wohnen sie es mitte den rich auch
-              besuch. Der der wohan auf mit dem er sie est.
+              Typically you can expect to save between 10, 20, and even upwards of
+              50% off MSRP.
             </div>
           </div>
         </div>
         <div class="faqs__faq">
           <div class="faqs__faq__wrapper">
             <div class="faqs__question">
-              <span>Lorem ipsum dolor set amit de consectetur?</span>
+              <span>Does Boardbox ship the order?</span>
             </div>
             <div class="faqs__answer" ref="toggle">
-              Vir dich sie aus mitten snowboarten
-              dem auf de rectar. Vo wohnen sie es mitte den rich auch
-              besuch. Der der wohan auf mit dem er sie est.
+              No. When an order is placed, we send an immediate notification to our featured brand
+              that an order has been placed and that they should pack and ship right away.
+            </div>
+          </div>
+        </div>
+        <div class="faqs__faq">
+          <div class="faqs__faq__wrapper">
+            <div class="faqs__question">
+              <span>Is there free shipping?</span>
+            </div>
+            <div class="faqs__answer" ref="toggle">
+              Shipping cost is all up to the brands we feature, and where they are located.
+              Sometimes maybe, other times their might be a shipping cost associated.
+            </div>
+          </div>
+        </div>
+        <div class="faqs__faq">
+          <div class="faqs__faq__wrapper">
+            <div class="faqs__question">
+              <span>Why is there a limit on quantity I can purchase?</span>
+            </div>
+            <div class="faqs__answer" ref="toggle">
+              We're all about sharing the stoke here at Boardbox, and want to make
+              sure everyone has a chance to get in on it.
             </div>
           </div>
         </div>
@@ -105,6 +127,23 @@
       </div>
       </div>
 
+      <div class="cta-brick">
+        <div class="cta-headline">Why Boardbox Marketplace?</div>
+        <div class="cta-copy">
+          We decided to take an additional approach at accomplishing
+          our goal of helping smaller boardsport startups get there name out there.
+        </div>
+        <div>
+          <a href="http://getboardbox.com/what-were-all-about/">Read the full story</a>
+        </div>
+      </div>
+
+
+      <div class="footer">
+        <div class="logo">
+          <img src="/static/img/bboxwhite_all.png" />
+        </div>
+      </div>
 
     </div>
 

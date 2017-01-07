@@ -1,6 +1,20 @@
 $(document).ready(function(){
 
 
+   $(".featuredlink").click(function (){
+       $('html, body').animate({
+           scrollTop: $("#featured-brand").offset().top - 50
+       }, 1000);
+   });
+
+   $(".faqlink").click(function (){
+       $('html, body').animate({
+           scrollTop: $("#faqs").offset().top - 50
+       }, 1000);
+   });
+
+
+
   if ( $("body").hasClass("checkout") ) {
 
     $("#mdlDismiss").click(function() {
@@ -10,6 +24,7 @@ $(document).ready(function(){
       var overlay = document.getElementById("overlay");
 
       if ( $(this).attr("data-open") === "no" ) {
+        $(".modal-options").css("opacity",1);
         form.className += " order__form--hidden";
         overlay.style.opacity = "0.8";
         menu.className += " dismiss-modal__btn--open";
@@ -17,6 +32,7 @@ $(document).ready(function(){
         menu.innerHTML = "Leave checkout?";
        $(this).attr("data-open","yes");
       } else {
+        $(".modal-options").css("opacity",0);
         menu.className = "dismiss-modal__btn";
         menu.innerHTML = "&#10005;";
         overlay.style.opacity = "0";
@@ -25,6 +41,25 @@ $(document).ready(function(){
         $(this).attr("data-open","no");
       }
 
+    })
+
+    $(".modal-options__exit").click(function(){
+      window.location.href= "/"
+    })
+
+    $(".modal-options__cancel").click(function(){
+
+      var menu = document.getElementById("mdlDismiss");
+      var form = document.getElementById("order-form");
+      var overlay = document.getElementById("overlay");
+
+      $(".modal-options").css("opacity",0);
+      menu.className = "dismiss-modal__btn";
+      menu.innerHTML = "&#10005;";
+      overlay.style.opacity = "0";
+      form.className += "order__form";
+      overlay.className = "checkout-overlay";
+      $("#mdlDismiss").attr("data-open","no");
     })
 
 
@@ -47,6 +82,7 @@ $(document).ready(function(){
         var hasError = false;
 
         var recipient = document.getElementById('txtRecipient');
+        var email = document.getElementById('txtEmail');
         var address1 = document.getElementById('txtAddress1');
         var address2 = document.getElementById('txtAddress2');
         var city = document.getElementById('txtCity');
@@ -60,11 +96,19 @@ $(document).ready(function(){
           hasError = true;
         }
 
+        if ( validate(email) ){
+          localStorage.setItem('bbox_email', email.value);
+        } else {
+          hasError = true;
+        }
+
         if ( validate(address1) ){
           localStorage.setItem('bbox_address1', address1.value);
         } else {
           hasError = true;
         }
+
+        localStorage.setItem('bbox_address2', address2.value);
 
         if ( validate(city) ){
           localStorage.setItem('bbox_city', city.value);
@@ -139,6 +183,9 @@ $(document).ready(function(){
     if ( localStorage.getItem('bbox_recipient') ){
     document.getElementById('txtRecipient').value = localStorage.getItem('bbox_recipient');
     }
+    if ( localStorage.getItem('bbox_email') ){
+    document.getElementById('txtEmail').value = localStorage.getItem('bbox_email');
+    }
     if ( localStorage.getItem('bbox_address1') ){
       document.getElementById('txtAddress1').value = localStorage.getItem('bbox_address1');
     }
@@ -166,6 +213,7 @@ $(document).ready(function(){
 
       document.getElementById('item-option').innerHTML = localStorage.getItem('bbox_size-needed');
       document.getElementById('recipient').innerHTML = localStorage.getItem('bbox_recipient');
+      document.getElementById('email').innerHTML = localStorage.getItem('bbox_email');
       document.getElementById('address1').innerHTML = localStorage.getItem('bbox_address1');
 
       if ( localStorage.getItem('bbox_address2') ){
@@ -191,7 +239,21 @@ $(document).ready(function(){
         locale: 'auto',
         token: function(token) {
           console.log(token)
-          $.post( "/checkout", { token: token.id, amount: (totalCost * 100), description: 'Voltfuse Grey Nordic Beanie' })
+          $.post( "/checkout", {
+            token: token.id,
+            amount: (totalCost * 100),
+            product: 'Voltfuse Grey Nordic Beanie',
+            product_variation: localStorage.getItem('bbox_size-needed'),
+            sub_total: "$" + productCost.toFixed(2),
+            shipping: "$" + shippingCost.toFixed(2),
+            total: "$" + totalCost.toFixed(2),
+            recipient_name:  localStorage.getItem('bbox_recipient'),
+            recipient_email: localStorage.getItem('bbox_email'),
+            address_line1: localStorage.getItem('bbox_address1'),
+            address_line2: localStorage.getItem('bbox_address2'),
+            city_state_zip: localStorage.getItem('bbox_city') + ", " + localStorage.getItem('bbox_state') + " " + localStorage.getItem('bbox_zip'),
+            country: localStorage.getItem('bbox_country')
+           })
           .done(function( data ) {
             console.log(data);
 
