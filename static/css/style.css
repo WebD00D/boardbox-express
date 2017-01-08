@@ -483,7 +483,7 @@ body {
       .steps__prompt {
         display: block;
         height: 20px;
-        background-color: #f43085;
+        background-color: #ffffff;
         padding-left: 0px; } }
   .steps__answer {
     display: flex;
