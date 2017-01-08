@@ -50,25 +50,38 @@ body {
       height: 25px;
       width: 150px;
       border-radius: 3px;
-      background-color: #2a2830;
+      background-color: #f43085;
       transition: .2s ease; }
       .header .nav__links__link--cta:hover {
-        background-color: #f43085; }
+        background-color: #2a2830; }
 
 .header .hero {
   top: -60px;
   position: relative;
   height: 600px;
-  background: linear-gradient(rgba(57, 55, 64, 0.6), rgba(57, 55, 64, 0.6)), url("../img/bbox-cover.jpg");
+  background: url("../img/bbox-cover.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+  background-attachment: fixed; }
+  .header .hero__overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#393740, #393740);
+    position: absolute;
+    opacity: 0.4; }
 
 .header .headline {
-  max-width: 90%; }
+  z-index: 1;
+  max-width: 90%;
+  opacity: 1; }
   .header .headline__primary {
     font-size: 50px;
     font-family: "filson-pro";
@@ -363,14 +376,14 @@ body {
 .order__header {
   display: flex;
   margin: 0 auto;
-  border-radius: 3px;
   padding: 30px;
-  background-image: url("http://getboardbox.com/wp-content/uploads/2016/10/Snowy.jpg");
+  background-image: url("/static/img/snowy-bg.jpg");
   background-size: cover;
   background-position: center;
   height: 200px;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background-attachment: fixed; }
 
 .order__headline {
   font-family: "filson-pro";
@@ -387,7 +400,16 @@ body {
   position: relative;
   top: -30px;
   border-radius: 3px;
-  z-index: 2; }
+  z-index: 2;
+  transition: .2s ease; }
+  @media (max-width: 800px) {
+    .order__form {
+      max-width: 400px;
+      width: 90%; } }
+  @media (max-width: 600px) {
+    .order__form {
+      max-width: 300px;
+      width: 90%; } }
   .order__form--hidden {
     z-index: 1; }
 
@@ -437,6 +459,9 @@ body {
     display: flex;
     margin-top: 10px;
     width: 100%; }
+    @media (max-width: 800px) {
+      .steps__prompt-wrapper {
+        flex-direction: column; } }
   .steps__prompt {
     font-weight: 500;
     background-color: #ebeaec;
@@ -451,6 +476,11 @@ body {
     flex: 1;
     font-size: 12px;
     color: rgba(42, 40, 48, 0.5); }
+    @media (max-width: 800px) {
+      .steps__prompt {
+        height: 30px;
+        background-color: white;
+        padding-left: 0px; } }
   .steps__answer {
     display: flex;
     flex-basis: 60%; }
@@ -464,6 +494,9 @@ body {
       font-weight: 300;
       border-top-right-radius: 3px;
       border-bottom-right-radius: 3px; }
+      @media (max-width: 800px) {
+        .steps__answer input {
+          height: 50px; } }
       .steps__answer input:focus {
         outline: 0; }
 
@@ -505,6 +538,11 @@ body {
     align-items: center;
     margin-left: 30px;
     transition: 0.5s ease; }
+    @media (max-width: 600px) {
+      .dismiss-modal__btn {
+        top: 0;
+        margin-left: 20px;
+        margin-top: 20px; } }
     .dismiss-modal__btn--open {
       width: 250px;
       background-color: rgba(255, 255, 255, 0.9); }
@@ -640,6 +678,10 @@ body {
   margin-top: 75px;
   transition: 0.5s ease;
   opacity: 0; }
+  @media (max-width: 600px) {
+    .modal-options {
+      margin-left: 20px;
+      margin-top: 0px; } }
   .modal-options__exit {
     font-weight: 500;
     cursor: pointer;
@@ -685,10 +727,12 @@ body {
   background: linear-gradient(rgba(57, 55, 64, 0.6), rgba(57, 55, 64, 0.6)), url("../img/pier.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-attachment: fixed;
   color: white;
   flex-direction: column; }
   .cta-brick a {

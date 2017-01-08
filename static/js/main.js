@@ -13,6 +13,25 @@ $(document).ready(function(){
        }, 1000);
    });
 
+   $(window).scroll(function(){
+
+    var position = $(window).scrollTop();
+    var opacity =  position / 500;
+    console.log(1- opacity);
+    if (opacity > .4){
+        $(".hero__overlay").css("opacity", position / 500);
+        $(".headline").css("opacity", 1 - opacity);
+
+    } else {
+      $(".hero__overlay").css("opacity", 0.4);
+      $(".headline").css("opacity", 1 - opacity);
+    }
+
+
+
+
+   })
+
 
 
   if ( $("body").hasClass("checkout") ) {
