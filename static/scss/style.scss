@@ -2,9 +2,6 @@
 $pink: rgb(244,48,133);
 $black: #2a2830;
 
-.App {
-
-}
 
 
 body {
@@ -669,7 +666,7 @@ body {
     width: 100%;
 
     @media(max-width: 800px){
-      flex-direction: column;
+      display: block;
     }
 
 
@@ -691,9 +688,11 @@ body {
     color: rgba(42, 40, 48, 0.5);
 
     @media(max-width: 800px){
-     height: 30px;
-     background-color: white;
+    display: block;
+     height: 20px;
+     background-color: $pink;
      padding-left: 0px;
+
     }
   }
 
@@ -1041,7 +1040,7 @@ body {
   background-attachment: fixed;
   color:white;
   flex-direction: column;
-  
+
   @media(max-width: 800px) {
     background-attachment: scroll;
   }

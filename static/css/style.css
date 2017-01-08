@@ -464,7 +464,7 @@ body {
     width: 100%; }
     @media (max-width: 800px) {
       .steps__prompt-wrapper {
-        flex-direction: column; } }
+        display: block; } }
   .steps__prompt {
     font-weight: 500;
     background-color: #ebeaec;
@@ -481,8 +481,9 @@ body {
     color: rgba(42, 40, 48, 0.5); }
     @media (max-width: 800px) {
       .steps__prompt {
-        height: 30px;
-        background-color: white;
+        display: block;
+        height: 20px;
+        background-color: #f43085;
         padding-left: 0px; } }
   .steps__answer {
     display: flex;
