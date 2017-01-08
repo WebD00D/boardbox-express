@@ -112,6 +112,10 @@ body {
     text-align: center;
     background-attachment: fixed;
 
+    @media(max-width: 800px) {
+      background-attachment: scroll;
+    }
+
     &__overlay {
       top: 0;
       left: 0;
@@ -1037,6 +1041,10 @@ body {
   background-attachment: fixed;
   color:white;
   flex-direction: column;
+  
+  @media(max-width: 800px) {
+    background-attachment: scroll;
+  }
 
   a {
     text-decoration: none;
