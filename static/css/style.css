@@ -59,7 +59,7 @@ body {
   top: -60px;
   position: relative;
   height: 600px;
-  background: url("../img/bbox-cover.jpg");
+  background: url("../img/cover-new.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -144,6 +144,8 @@ body {
   .featured-brand__brand {
     margin-top: 30px;
     font-size: 40px; }
+    .featured-brand__brand img {
+      height: 90px; }
   .featured-brand__about {
     margin: 0 auto;
     margin-top: 20px;

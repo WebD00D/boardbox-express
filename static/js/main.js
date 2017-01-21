@@ -81,17 +81,16 @@ $(document).ready(function(){
       $("#mdlDismiss").attr("data-open","no");
     })
 
-
     $(".next-step__btn").click(function(e){
       e.preventDefault()
       var step = $(this).attr("data-step");
       switch (step) {
         case "1":
 
-          var size = document.getElementById('txtSizeNeeded');
+          var wheelSize = document.getElementById('txtWheelSize');
 
-          if ( validate(size) ){
-            localStorage.setItem('bbox_size-needed', size.value);
+          if ( validate(wheelSize) ){
+            localStorage.setItem('bbox_size', wheelSize.value);
             window.location.href = "/checkout/shipping";
           }
 
@@ -166,7 +165,7 @@ $(document).ready(function(){
 
         handler.open({
           name: 'Boardbox Marketplace',
-          description: 'Voltfuse Grey Nordic Beanie',
+          description: 'Wub Wheels - LOST CITY 100A Wheels',
           amount: amount
         });
 
@@ -190,8 +189,8 @@ $(document).ready(function(){
 
   if ( $("body").hasClass("js_checkout-option") ){
 
-    if ( localStorage.getItem('bbox_size-needed') ){
-      document.getElementById('txtSizeNeeded').value = localStorage.getItem('bbox_size-needed');
+    if ( localStorage.getItem('bbox_size') ){
+      document.getElementById('txtWheelSize').value = localStorage.getItem('bbox_size');
     }
 
   }
@@ -230,7 +229,7 @@ $(document).ready(function(){
 
   if ( $("body").hasClass("js_checkout-payment") ){
 
-      document.getElementById('item-option').innerHTML = localStorage.getItem('bbox_size-needed');
+      document.getElementById('item-option').innerHTML = localStorage.getItem('bbox_size');
       document.getElementById('recipient').innerHTML = localStorage.getItem('bbox_recipient');
       document.getElementById('email').innerHTML = localStorage.getItem('bbox_email');
       document.getElementById('address1').innerHTML = localStorage.getItem('bbox_address1');
@@ -245,7 +244,7 @@ $(document).ready(function(){
       document.getElementById('country').innerHTML = localStorage.getItem('bbox_country');
 
       var shippingCost = parseFloat(4.00)
-      var productCost = parseFloat(20.00)
+      var productCost = parseFloat(16.00)
       var totalCost = productCost + shippingCost
 
       $("#subtotal").text("$" + productCost.toFixed(2)).attr("data-amount", productCost.toFixed(2));
@@ -261,7 +260,7 @@ $(document).ready(function(){
           $.post( "/checkout", {
             token: token.id,
             amount: (totalCost * 100),
-            product: 'Voltfuse Grey Nordic Beanie',
+            product: 'Wub Wheels - Label Watch Beanie',
             product_variation: localStorage.getItem('bbox_size-needed'),
             sub_total: "$" + productCost.toFixed(2),
             shipping: "$" + shippingCost.toFixed(2),
